@@ -78,22 +78,67 @@ alert(second) //[1,2,3,4,5,6,7];
 
 
 
-//write a function called longest that takes in our sentence variable, and returns the longest word in that sentence.
+//write a function called longest that takes in our sentence 
+//variable, and returns the longest word in that sentence.
 var sentence = "Dev Mountain is the best"
 
-  //code here
+//First solution
+
+var longest = function(string) {
+	var str = string.split(' ');
+	var characters = 0;
+	for (var i = 0; i < str.length; i++) {
+		if (str[i].length > characters) {
+			characters = str[i].length;
+		}
+
+	}
+	for (var j = 0; j < str.length; j++) {
+		if (str[j].length === characters) {
+			return str[j]
+		}
+	}
+};
+
+longest(sentence)
+
+//Second Solution
+
+function longest(string) {
+    var str = string.split(" ");
+    var longest = 0;
+    var word = null;
+    for (var i = 0; i < str.length - 1; i++) {
+        if (longest < str[i].length) {
+            longest = str[i].length;
+            word = str[i];
+        }
+    }
+    return word;
+}
+
+longest(sentence);
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
 
 
-//write a function called capitalize that takes in the myPoem variable and capitalizes every word 
+//write a function called capitalize that takes in the myPoem 
+//variable and capitalizes every word 
 var myPoem = 'What is a jQuery but a misunderstood object?'
-//What is a jQuery but a misunderstood object? --> What Is A JQuery But A Misunderstood Object?
+//What is a jQuery but a misunderstood object? --> 
+//What Is A JQuery But A Misunderstood Object? 
 
-  //code here
+var caps = function (str){
+    return str.replace(/\b./g, function(upper){ 
+    	return upper.toUpperCase(); 
+    	});
+};
 
+
+
+caps('what is a jQuery but a misunderstood object?');
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */

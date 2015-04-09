@@ -146,4 +146,32 @@ caps('what is a jQuery but a misunderstood object?');
 
 
 var theOdyssey = "function expression or function declaration? Tis an obvious choice";
-//Write a function called vowelCounter that takes in a string (theOdyssey) and returns how many vowels are in that string.
+//Write a function called vowelCounter that takes in a string (theOdyssey) and returns 
+//how many vowels are in that string.
+
+//a, e, i, o, u
+var vowelCounter = function (str) {
+	var counter = 0;
+	for (var i = 0; i < str.length; i++) {
+		switch(str[i]) {
+			case 'a':
+				counter++;
+				break;
+			case 'e':
+				counter++;
+				break;	
+			case 'i':
+				counter++;
+				break;
+			case 'o':
+				counter++;
+				break;
+			case 'u':
+				counter++;
+				break;	
+		}
+	}
+	return counter;
+};
+
+

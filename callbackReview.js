@@ -168,8 +168,13 @@ getUserById('16t', users, function(user){
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
-
-var find = function()
+debugger;
+var find = function(arry, cb) {
+  for (var i = 0; i < arry.length; i++) {
+    if (cb(arry[i]) === true)
+      return arry[i];
+  }
+};
 
 //Looks through each value in the list, returning the first one that passes a truth 
 //test 

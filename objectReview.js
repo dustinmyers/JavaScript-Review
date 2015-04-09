@@ -43,17 +43,28 @@ var user = {
     age: 0
 }
 
-//Above you're given a user object. Loop through the user object checking to make sure that each value is truthy. If it's not truthy, remove it from the object. hint: 'delete'.
+//Above you're given a user object. Loop through the user 
+//object checking to make sure that each value is truthy. 
+//If it's not truthy, remove it from the object. 
+//hint: 'delete'.
 
-  //Your code here
+for (var key in user) {
+  if (!user[key]) {
+    delete user[key];
+  }
+}
 
-//Once you get your truthy object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
+//Once you get your truthy object, Change the remaining 
+//values in the object to be specific to you 
+//(name: 'your name', username: 'your username'), rather than 
+//my information.
 
-  //Your code here
+user.name = 'Philipp';
+user.username = 'Schulte';
 
 //Now console.log your object and make sure it looks right.
 
-  //Your code here
+console.log(user);
 
 
 
@@ -63,24 +74,64 @@ var user = {
 
 //create an empty object called methodCollection. 
 
-  //Your code here
+var methodCollection = {};
 
-//Now add two methods (functions that are properties on objects) to your methodCollection object. One called 'alertHello' which alerts 'hello' and another method called logHello which logs 'hello' to the console. 
+//Now add two methods (functions that are properties on 
+  //objects) to your methodCollection object. 
+//One called 'alertHello' which alerts 'hello' and 
+//another method called logHello which logs 'hello' to the 
+//console. 
 
-  //Your code here
+methodCollection.alertHello = function(str) {
+  alert(str);
+};
+
+methodCollection.logHello = function(str) {
+  console.log(str);
+};
+
+
 
 //Now call your alertHello and logHello methods. 
 
-  //Your code here
+methodCollection.alertHello('hello');
+methodCollection.logHello('hello');
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
+//  a, e, i, o, u //
 
-
-//write a function called voweler that accepts a string, and returns an object with the keys being all the vowels in that string, and the values being how many times that particular vowel was in the string.
+//write a function called voweler that accepts a string, 
+//and returns an object with the keys being all the vowels 
+//in that string, and the values being how many times that 
+//particular vowel was in the string.
 //voweler("This is a test") --> {i: 2, a: 1, e: 1};
 
-
+var voweler = function(str) {
+  debugger;
+  var vowelCount = {};
+  var a = 0, e = 0, i = 0, o = 0, u = 0;
+  for (var j = 0; j < str.length; j++) {
+    switch(str[j]) {
+        case 'a':
+          vowelCount.a = ++a;
+          break;
+        case 'e':
+          vowelCount.e = ++e;
+          break;  
+        case 'i':
+          vowelCount.i = ++i;
+          break;
+        case 'o':
+          vowelCount.o = ++o;
+          break;
+        case 'u':
+          vowelCount.u = ++u;
+          break;
+    }
+  }     
+  return vowelCount;     
+};
 
